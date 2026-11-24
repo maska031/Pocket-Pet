@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#171820">
+  <meta name="description" content="Report a bug or request help with the Pocket Pet Minecraft mod.">
+  <title>Report a bug — Pocket Pet</title>
+  <style>
+    :root { color-scheme: dark; --bg:#121318; --panel:#1c1e26; --text:#f4e7d0; --muted:#b4b2bb; --gold:#e8b96b; --line:#383943; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-height:100vh; padding:32px 18px; display:grid; place-items:center; background:radial-gradient(ellipse at 50% 0,#292635 0,var(--bg) 60%); color:var(--text); font:16px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif; }
+    main { width:min(100%,700px); padding:clamp(24px,6vw,48px); background:color-mix(in srgb,var(--panel) 94%,transparent); border:1px solid var(--line); border-radius:22px; box-shadow:0 24px 80px #0008; }
+    .badge { display:inline-flex; align-items:center; gap:8px; color:var(--gold); font-size:.83rem; font-weight:700; letter-spacing:.08em; text-transform:uppercase; }
+    h1 { margin:14px 0 4px; font-size:clamp(2rem,7vw,3.25rem); line-height:1.1; letter-spacing:-.04em; }
+    .sub { margin:0 0 28px; color:var(--muted); }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin:24px 0 32px; }
+    a.button { display:inline-flex; justify-content:center; align-items:center; min-height:48px; padding:11px 18px; border:1px solid var(--gold); border-radius:12px; color:#21190e; background:var(--gold); font-weight:750; text-decoration:none; transition:transform .15s,filter .15s; }
+    a.button:hover { transform:translateY(-2px); filter:brightness(1.08); }
+    a.secondary { color:var(--text); background:transparent; border-color:var(--line); }
+    h2 { margin:26px 0 8px; font-size:1.12rem; }
+    ol { margin:8px 0; padding-left:24px; color:var(--muted); }
+    li { padding:3px 0; }
+    .notice { margin-top:22px; padding:14px 16px; border-left:3px solid var(--gold); border-radius:6px; background:#ffffff08; color:var(--muted); font-size:.92rem; }
+    footer { margin-top:30px; padding-top:18px; border-top:1px solid var(--line); color:var(--muted); font-size:.86rem; }
+    footer a { color:var(--gold); }
+    .ru { display:none; }
+    body[data-lang="ru"] .en { display:none; }
+    body[data-lang="ru"] .ru { display:initial; }
+    button.lang { float:right; border:1px solid var(--line); border-radius:9px; padding:7px 11px; color:var(--text); background:transparent; cursor:pointer; }
+    a:focus-visible,button:focus-visible { outline:3px solid #fff; outline-offset:3px; }
+  </style>
+</head>
+<body>
+  <main>
+    <button class="lang" id="language" type="button" aria-label="Switch language">Русский</button>
+    <div class="badge">🐾 Pocket Pet</div>
+    <h1><span class="en">Found a bug?</span><span class="ru">Нашли ошибку?</span></h1>
+    <p class="sub"><span class="en">Thank you for helping make the mod better. Send a report on GitHub and include the details below.</span><span class="ru">Спасибо, что помогаете улучшать мод. Отправьте обращение на GitHub и добавьте информацию ниже.</span></p>
+
+    <div class="actions">
+      <a class="button" href="https://github.com/maska031/Pocket-Pet/issues/new?template=bug_report.yml"><span class="en">Report a bug on GitHub&nbsp; →</span><span class="ru">Сообщить об ошибке на GitHub&nbsp; →</span></a>
+      <a class="button secondary" href="https://github.com/maska031/Pocket-Pet/issues"><span class="en">Browse existing reports</span><span class="ru">Посмотреть известные ошибки</span></a>
+    </div>
+
+    <h2><span class="en">What to include</span><span class="ru">Что указать</span></h2>
+    <ol>
+      <li><span class="en">Minecraft and Pocket Pet versions (1.21.11 or 26.3).</span><span class="ru">Версии Minecraft и Pocket Pet (1.21.11 или 26.3).</span></li>
+      <li><span class="en">Fabric Loader, Fabric API, and your operating system.</span><span class="ru">Версии Fabric Loader, Fabric API и вашу операционную систему.</span></li>
+      <li><span class="en">Steps to reproduce the problem and what you expected to happen.</span><span class="ru">Шаги для повторения ошибки и что вы ожидали увидеть.</span></li>
+      <li><span class="en">A relevant log or crash report, if available.</span><span class="ru">Фрагмент лога или crash report, если он есть.</span></li>
+    </ol>
+
+    <p class="notice"><span class="en">A GitHub account is required to submit an issue. Please remove passwords, tokens, and personal information from logs; they can contain your Windows username.</span><span class="ru">Для отправки обращения нужен аккаунт GitHub. Удалите из логов пароли, токены и личные данные: в них может быть имя пользователя Windows.</span></p>
+    <footer><span class="en">Pocket Pet is a client-side Fabric mod. </span><span class="ru">Pocket Pet — клиентский мод для Fabric. </span><a href="https://github.com/maska031/Pocket-Pet"><span class="en">Project on GitHub</span><span class="ru">Проект на GitHub</span></a></footer>
+  </main>
+  <script>
+    const languageButton = document.getElementById('language');
+    languageButton.addEventListener('click', () => {
+      const russian = document.body.dataset.lang !== 'ru';
+      document.body.dataset.lang = russian ? 'ru' : 'en';
+      document.documentElement.lang = russian ? 'ru' : 'en';
+      languageButton.textContent = russian ? 'English' : 'Русский';
+    });
+  </script>
+</body>
+</html>
