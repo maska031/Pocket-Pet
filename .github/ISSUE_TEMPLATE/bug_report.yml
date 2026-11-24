@@ -1,0 +1,92 @@
+name: Bug report / Сообщить об ошибке
+description: Report a Pocket Pet problem / Сообщите о проблеме с Pocket Pet
+title: "[Bug]: "
+labels: ["bug"]
+assignees: ["maska031"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve Pocket Pet! / Спасибо, что помогаете улучшить Pocket Pet!
+
+        Please do not post passwords, access tokens, or unredacted personal information. Logs can contain your Windows username. / Не указывайте пароли, токены и личные данные. В логах может быть имя пользователя Windows.
+
+  - type: input
+    id: mod-version
+    attributes:
+      label: Pocket Pet version / Версия мода
+      description: Find it in the installed JAR name or mod list.
+      placeholder: 1.0.0-mc1.21.11
+    validations:
+      required: true
+
+  - type: dropdown
+    id: minecraft-version
+    attributes:
+      label: Minecraft version / Версия Minecraft
+      options:
+        - "1.21.11"
+        - "26.3"
+        - Other / Другая
+    validations:
+      required: true
+
+  - type: input
+    id: loader
+    attributes:
+      label: Fabric Loader and Fabric API versions / Версии Fabric Loader и Fabric API
+      placeholder: Fabric Loader 0.19.0, Fabric API ...
+    validations:
+      required: true
+
+  - type: input
+    id: operating-system
+    attributes:
+      label: Operating system / Операционная система
+      placeholder: Windows 10, Windows 11, Linux, macOS...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce / Как повторить ошибку
+      description: List the steps in order. / Опишите шаги по порядку.
+      placeholder: |
+        1. Open ... / Открыть ...
+        2. Click ... / Нажать ...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior / Ожидаемое поведение
+      placeholder: What did you expect to happen? / Что должно было произойти?
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior / Фактическое поведение
+      placeholder: What happened instead? / Что произошло вместо этого?
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log or crash report / Фрагмент лога или crash report
+      description: Paste only the relevant part and remove personal information first. For large logs, attach the file after creating the issue. / Вставьте нужный фрагмент и сначала удалите личные данные. Большой лог можно прикрепить к созданному issue.
+      render: text
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting / Перед отправкой
+      options:
+        - label: I searched existing issues and did not find the same report. / Я проверил существующие обращения и не нашёл такого же.
+          required: true
